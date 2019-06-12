@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    {# Sets page ready for mobile use#}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        #center_body {
+            background: #003973;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+    </style>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        {% include 'pages/layouts/navbar.html' %}
+        {% block content %}{% endblock %}
+    {% else %}
+      <p>You are not logged in</p>
+      <form action="{% url 'login' %}">
+        <button type="submit">Click me</button>
+      </form>
+    {% endif %}
+</body>
+</html>
