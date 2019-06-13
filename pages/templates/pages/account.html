@@ -1,5 +1,16 @@
-{% extends "pages/layouts/base.html" %}
+{% extends "pages/layouts/home.html" %}
 
 {% block content %}
-<h1>ACCOUNT</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            {% if user.profile.img_src != "" %}
+                    <img class="img-fluid img-thumbnail float-left" alt="Responsive image" src="{{user.profile.img_src}}">
+            {% else %}
+                <img  class="img-fluid img-thumbnail float-left" alt="Responsive image" src="http://kempenfeltplayers.com/wp-content/uploads/2015/07/profile-icon-empty.png">
+            {% endif %}
+        </div>
+        <div class="col-sm-6">
+            <p>Name: </p>
+        </div>
+    </div>
 {% endblock %}

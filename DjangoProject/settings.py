@@ -25,7 +25,7 @@ SECRET_KEY = '@on5r7y=go6b&_t9q^2l@_4u+2expj9e05b41+v+0n2ego*#t^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['joaorgs.pythonanywhere.com', '127.0.0.1',]
+ALLOWED_HOSTS = ['joaorgs.pythonanywhere.com', '127.0.0.1', 'local_host']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages',
+    'account',
 ]
 
 MIDDLEWARE = [
