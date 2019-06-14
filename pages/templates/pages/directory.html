@@ -1,5 +1,14 @@
-{% extends "pages/layouts/base.html" %}
+{% extends "pages/layouts/home.html" %}
 
 {% block content %}
-<h1>DIRECTORY</h1>
+    <div container>
+        <h4>Member</h4>
+        <div class="list-group">
+        {% for this_user in brothers%}
+            <a class="list-group-item list-group-item-action">{{ this_user.get_full_name }}</a>
+        {% empty %}
+            <a>No users at this time</a>
+        {% endfor %}
+        </div>
+    </div>
 {% endblock %}

@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 def index(request):
@@ -7,7 +9,10 @@ def index(request):
 
 
 def directory(request):
-    return render(request, 'pages/directory.html', {})
+    print("DEBUG")
+    brothers = User.objects.order_by('last_name')
+    print(brothers)
+    return render(request, 'pages/directory.html', {'brothers': brothers})
 
 
 def account(request):
