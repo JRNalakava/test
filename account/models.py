@@ -22,7 +22,10 @@ class Profile(models.Model):
     college_year_selection = models.PositiveSmallIntegerField(choices=COLLEGE_YEAR, null=False, blank=False, default=0)
 
     def get_college_year(self):
-        return self.COLLEGE_YEAR[self.college_year_selection][1]
+        try:
+            return self.COLLEGE_YEAR[self.college_year_selection][1]
+        except Exception:
+            return "N/A"
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
