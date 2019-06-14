@@ -19,7 +19,7 @@ class Profile(models.Model):
     SENIOR = 3
     COLLEGE_YEAR = ((FRESHMAN, "Freshman"), (SOPHOMORE, "Sophomore"), (JUNIOR, "Junior"), (SENIOR, "Senior"))
     college_year = models.TextField(blank=False)
-    college_year_selection = models.PositiveSmallIntegerField(choices=COLLEGE_YEAR, null=True, blank=True)
+    college_year_selection = models.PositiveSmallIntegerField(choices=COLLEGE_YEAR, null=True, blank=False, default=0)
 
     def get_college_year(self):
         return self.COLLEGE_YEAR[self.college_year_selection][1]
