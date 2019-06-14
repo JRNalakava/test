@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['joaorgs.pythonanywhere.com', '127.0.0.1', 'local_host', 'texasiota.pythonanywhere.com']
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Application definition
 
