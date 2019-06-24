@@ -5,7 +5,7 @@
         <h4>Member</h4>
         <div class="list-group">
         {% for this_user in brothers%}
-            <a class="list-group-item list-group-item-action">{{ this_user.get_full_name }}</a>
+            <a class="list-group-item list-group-item-action" href="accounts/{{ this_user.username }}">{{ this_user.get_full_name }}</a>
         {% empty %}
             <a>No users at this time</a>
         {% endfor %}

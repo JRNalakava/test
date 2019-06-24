@@ -1,0 +1,39 @@
+<div class="header">
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#postModal">Create Post</button>
+</div>
+{% for post in posts %}
+    <div class="card border">
+        <div class="card-header">
+            <img class="img-circle" html={{ post.author.profile.img_src }}>
+            <label>{{ post.author.get_full_name }}</label>
+        </div>
+        <div class="card-body">
+            <p>{{ post.text }}</p>
+        </div>
+    </div>
+{% endfor %}
+
+<div>
+    <img class='mx-auto d-block img-responsive' src="https://i.ibb.co/mN5MVr1/go-away.png" alt="go-away" border="0">
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

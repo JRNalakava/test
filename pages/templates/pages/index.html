@@ -1,9 +1,12 @@
 {%  extends "pages/layouts/home.html" %}
 
 {% block content %}
-    <div class="container-fluid" id=center_body>
+    <div class="container-fluid">
             {#Main body extends to all of the screen#}
             <div class="container-fluid">
+                <div>
+                    {% include 'posts/posts.html' %}
+                </div>
             </div>
     </div>
 {% endblock %}

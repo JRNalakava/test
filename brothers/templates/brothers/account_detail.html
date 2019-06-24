@@ -1,34 +1,34 @@
-{% extends "pages/layouts/base.html" %}
+{% extends "brothers/index.html" %}
 
 {% block home %}
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
-                <h2>{{ user.get_full_name }}</h2>
+                <h2>{{ this_user.get_full_name }}</h2>
                 <div style="margin: 0 auto">
-                    <img class="img-fluid img-rounded-circle " alt="Responsive image" src="{{user.profile.img_src}}
+                    <img class="img-fluid img-rounded`-circle " alt="Responsive image" src="{{this_user.profile.img_src}}
                         "onError="this.onerror=null;
                         this.src='http://kempenfeltplayers.com/wp-content/uploads/2015/07/profile-icon-empty.png';">
 
                 </div>
                 <div class="row" style="word-wrap: break-word">
                     <div class="col">First Name</div>
-                    <div class="col">{{ user.first_name }}</div>
+                    <div class="col">{{ this_user.first_name }}</div>
                     <div class="w-100"></div>
                     <div class="col">Last Name</div>
-                    <div class="col">{{ user.last_name }}</div>
+                    <div class="col">{{ this_user.last_name }}</div>
                     <div class="w-100"></div>
                     <div class="col-6">E-mail</div>
-                    <div class="col-6">{{ user.email }}</div>
+                    <div class="col-6">{{ this_user.email }}</div>
                     <div class="w-100"></div>
                     <div class="col">Pledge Class</div>
-                    <div class="col">{{ user.profile.pledge_class }}</div>
+                    <div class="col">{{ this_user.profile.pledge_class }}</div>
 
                 </div>
             </div>
             <div class="col-sm">
-                <h4>{{ user.get_full_name }}</h4>
-                <P>Class: {{ user.profile.get_college_year_collection }}</P>
+                <h4>{{ this_user.get_full_name }}</h4>
+                <P>Class: {{ this_user.profile.get_college_year_collection }}</P>
             </div>
         </div>
 

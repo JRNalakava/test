@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'account',
     'brothers',
     'social_django',
+    'posts',
 ]
 
 MIDDLEWARE = [
